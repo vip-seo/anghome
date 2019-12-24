@@ -1,24 +1,39 @@
-<div>
-  <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th>&nbsp;</th>
-      </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let item of getList()">
+<div class="container-fluid">
+  <div class="row">
+    
+    <div class="col-1">
+      <button class="btn btn-outline-primary btn-sm m-1">All Category</button>
+      <button class="btn btn-outline-primary btn-sm m-1">Category 1</button>
+      <button class="btn btn-outline-primary btn-sm m-1">Category 2</button>
+      <button class="btn btn-outline-primary btn-sm m-1">Category 3</button>
+    </div>
+
+    <div class="col-8">
+      <table class="table table-striped">
+        <thead>
           <tr>
-              <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.id}}</td>
-              <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.name}}</td>
-              <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.price}}</td>
-              <td>
-                <button class="btn btn-danger" (click)="deleteRow(item.id)">Delete</button>
-              </td>
-          </tr>
-        </ng-container>
-      </tbody>
-  </table>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of getList()">
+            <tr>
+                <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.id}}</td>
+                <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.name}}</td>
+                <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.price}}</td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteRow(item.id)">Delete</button>
+                </td>
+            </tr>
+          </ng-container>
+        </tbody>
+    </table>
+    </div>
+  <div class="col-2">
+
+    </div>
+  </div>
 </div>

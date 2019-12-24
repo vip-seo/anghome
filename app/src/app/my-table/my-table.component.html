@@ -11,9 +11,9 @@
       <tbody>
         <ng-container *ngFor="let item of getList()">
           <tr>
-              <td>{{item.id}}</td>
-              <td>{{item.name}}</td>
-              <td>{{item.price}}</td>
+              <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.id}}</td>
+              <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.name}}</td>
+              <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.price}}</td>
               <td>
                 <button class="btn btn-danger" (click)="deleteRow(item.id)">Delete</button>
               </td>

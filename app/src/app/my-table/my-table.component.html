@@ -1,12 +1,13 @@
 <div class="container-fluid">
   <div class="row">
     
-    <div class="col-1">
-      <button class="btn btn-outline-primary btn-sm m-1">All Category</button>
-      <button class="btn btn-outline-primary btn-sm m-1">Category 1</button>
-      <button class="btn btn-outline-primary btn-sm m-1">Category 2</button>
-      <button class="btn btn-outline-primary btn-sm m-1">Category 3</button>
-    </div>
+    <div class="col-2">
+    <br/>
+        <select class="form-control" #t (change)="filterCat(t.value)">
+          <option *ngFor="let item of getCategory()" [value]="item">{{item}}
+          </option>
+        </select>
+          </div>
 
     <div class="col-8">
       <table class="table table-striped">
@@ -15,6 +16,7 @@
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
+            <th scope="col">Category</th>
             <th>&nbsp;</th>
         </tr>
         </thead>
@@ -24,6 +26,7 @@
                 <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.id}}</td>
                 <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.name}}</td>
                 <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.price}}</td>
+                <td [style.color]="item.price > 500 ?  'red': 'black'">{{item.category}}</td>
                 <td>
                   <button class="btn btn-danger" (click)="deleteRow(item.id)">Delete</button>
                 </td>
